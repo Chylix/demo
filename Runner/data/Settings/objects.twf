@@ -1,0 +1,478 @@
+; --------------------------------------------
+; Snake --------------------------------------
+
+s1_PositionX = -105.0
+s1_PositionY = -10.0
+s1_PositionZ = 80.0
+s1_ScaleX = 0.6
+s1_ScaleY = 0.6
+s1_ScaleZ = 0.5
+s1_RotationX = 0.0
+s1_RotationY = 340.0
+s1_RotationZ = 0.0
+
+s2_PositionX = 130.0
+s2_PositionY = -30
+s2_PositionZ = 130
+s2_ScaleX = 0.7
+s2_ScaleY = 0.8
+s2_ScaleZ = 0.8
+s2_RotationX = 0.0
+s2_RotationY = 65.0
+s2_RotationZ = 350.0
+
+s3_PositionX = 430
+s3_PositionY = -10
+s3_PositionZ = 270
+s3_ScaleX = 1.2
+s3_ScaleY = 1.5
+s3_ScaleZ = 1.5
+s3_RotationX = 0.0
+s3_RotationY = 75
+s3_RotationZ = 350.0
+
+; --------------------------------------------
+; Fog ----------------------------------------
+
+0_PositionX = -65.0
+0_PositionY = -13.0
+0_PositionZ = 13.0
+0_ScaleX = 40.0
+0_ScaleY = 0.0
+0_ScaleZ = 40.0
+0_RotationX = 0.0
+0_RotationY = 70.0
+0_RotationZ = -90.0
+
+1_PositionX = -80.0
+1_PositionY = -10.0
+1_PositionZ = 26.0
+1_ScaleX = 25.0
+1_ScaleY = 0.0
+1_ScaleZ = 25.0
+1_RotationX = 160.0
+1_RotationY = 70.0
+1_RotationZ = -90.0
+
+2_PositionX = -190
+2_PositionY = -15.0
+2_PositionZ = 80.0
+2_ScaleX = 70.0
+2_ScaleY = 0.0
+2_ScaleZ = 70.0
+2_RotationX = 0.0
+2_RotationY = 65.0
+2_RotationZ = -90.0
+
+3_PositionX = -60.0
+3_PositionY = -15.0
+3_PositionZ = 50.0
+3_ScaleX = 30.0
+3_ScaleY = 0.0
+3_ScaleZ = 30.0
+3_RotationX = -70
+3_RotationY = 90
+3_RotationZ = -90
+
+4_PositionX = -120.0
+4_PositionY = -15.0
+4_PositionZ = 60.0
+4_ScaleX = 80.0
+4_ScaleY = 0.0
+4_ScaleY = 0.0
+4_ScaleZ = 80.0
+4_RotationX = -50.0
+4_RotationY = 80.d0
+4_RotationZ = -90.0
+
+5_PositionX = -55.0
+5_PositionY = -15.0
+5_PositionZ = 35.0
+5_ScaleX = 50.0
+5_ScaleY = 0.0
+5_ScaleZ = 50.0
+5_RotationX = -50.0
+5_RotationY = 90.0
+5_RotationZ = -90.0
+
+6_PositionX = -100.0
+6_PositionY = -13.0
+6_PositionZ = 80.0
+6_ScaleX = 45.0
+6_ScaleY = 0.0
+6_ScaleZ = 45.0
+6_RotationX = -60.0
+6_RotationY = 70.0
+6_RotationZ = -90.0
+
+7_PositionX = -70.0
+7_PositionY = -15.0
+7_PositionZ = 22.0
+7_ScaleX = 50.0
+7_ScaleY = 0.0
+7_ScaleZ = 50.0
+7_RotationX = 120.0
+7_RotationY = 80.0
+7_RotationZ = -90.0
+
+8_PositionX = -65
+8_PositionY = -5
+8_PositionZ = 70
+8_ScaleX = 40.0
+8_ScaleY = 0.0
+8_ScaleZ = 40.0
+8_RotationX = 120.0
+8_RotationY = 90.0
+8_RotationZ = -90.0
+
+9_PositionX = -120.0
+9_PositionY = -10.0
+9_PositionZ = 160.0
+9_ScaleX = 100.0
+9_ScaleY = 0.0
+9_ScaleZ = 100.0
+9_RotationX = -20.0
+9_RotationY = 90.0
+9_RotationZ = -90.0
+
+10_PositionX = -200
+10_PositionY = -20.0
+10_PositionZ = 90.0
+10_ScaleX = 60.0
+10_ScaleY = 0.0
+10_ScaleZ = 60.0
+10_RotationX = 0.0
+10_RotationY = 70.0
+10_RotationZ = -90.0
+
+11_PositionX = -35
+11_PositionY = -5
+11_PositionZ = 100
+11_ScaleX = 30
+11_ScaleY = 0.0
+11_ScaleZ = 30
+11_RotationX = 0.0
+11_RotationY = 90.0
+11_RotationZ = -90.0
+
+12_PositionX = -55
+12_PositionY = -5.0
+12_PositionZ = 40.0
+12_ScaleX = 25.0
+12_ScaleY = 0.0
+12_ScaleZ = 25.0
+12_RotationX = -30.0
+12_RotationY = 90.0
+12_RotationZ = -90.0
+
+13_PositionX = -40
+13_PositionY = -10.0
+13_PositionZ = 73.0
+13_ScaleX = 40.0
+13_ScaleY = 0.0
+13_ScaleZ = 40.0
+13_RotationX = 0.0
+13_RotationY = 90.0
+13_RotationZ = -90.0
+
+14_PositionX = -48.0
+14_PositionY = -5.0
+14_PositionZ = 60.0
+14_ScaleX = 25.0
+14_ScaleY = 0.0
+14_ScaleZ = 25.0
+14_RotationX = 0.0
+14_RotationY = 90.0
+14_RotationZ = -90.0
+
+15_PositionX = -85
+15_PositionY = -20.0
+15_PositionZ = 156.0
+15_ScaleX = 90.0
+15_ScaleY = 0.0
+15_ScaleZ = 90.0
+15_RotationX = 120.0
+15_RotationY = 90.0
+15_RotationZ = -90.0
+
+16_PositionX = -300.0
+16_PositionY = -40.0
+16_PositionZ = 150.0
+16_ScaleX = 150.0
+16_ScaleY = 0.0
+16_ScaleZ = 150.0
+16_RotationX = -90
+16_RotationY = 90.0
+16_RotationZ = -90.0
+
+17_PositionX = -170.0
+17_PositionY = 0.0
+17_PositionZ = 200.0
+17_ScaleX = 100.0
+17_ScaleY = 0.0
+17_ScaleZ = 100.0
+17_RotationX = 0.0
+17_RotationY = 90.0
+17_RotationZ = -90.0
+
+18_PositionX = -200
+18_PositionY = -5.0
+18_PositionZ = 150.0
+18_ScaleX = 80.0
+18_ScaleY = 0.0
+18_ScaleZ = 80.0
+18_RotationX = 110.0
+18_RotationY = 90.0
+18_RotationZ = -90.0
+
+19_PositionX = -220
+19_PositionY = -10.0
+19_PositionZ = 140.0
+19_ScaleX = 50.0
+19_ScaleY = 0.0
+19_ScaleZ = 50.0
+19_RotationX = 0.0
+19_RotationY = 90.0
+19_RotationZ = -90.0
+
+20_PositionX = 70
+20_PositionY = -15
+20_PositionZ = 8
+20_ScaleX = 40
+20_ScaleY = 0.0
+20_ScaleZ = 40
+20_RotationX = 100
+20_RotationY = 120
+20_RotationZ = -90.0
+
+21_PositionX = 50
+21_PositionY = -10
+21_PositionZ = 12
+21_ScaleX = 30
+21_ScaleY = 0.0
+21_ScaleZ = 30
+21_RotationX = 0
+21_RotationY = 110
+21_RotationZ = -90
+
+
+22_PositionX = 80
+22_PositionY = -13
+22_PositionZ = 25
+22_ScaleX = 40
+22_ScaleY = 0.0
+22_ScaleZ = 40
+22_RotationX = 120
+22_RotationY = 120
+22_RotationZ = -90.0
+
+23_PositionX = 60
+23_PositionY = -25
+23_PositionZ = 45
+23_ScaleX = 60
+23_ScaleY = 0.0
+23_ScaleZ = 60
+23_RotationX = 0.0
+23_RotationY = 120
+23_RotationZ = -90.0
+
+24_PositionX = 90
+24_PositionY = -18
+24_PositionZ = 55.0
+24_ScaleX =  60
+24_ScaleY = 0.0
+24_ScaleZ = 60
+24_RotationX = 120.0
+24_RotationY = 110
+24_RotationZ = -90.0
+
+25_PositionX = 150
+25_PositionY = -15
+25_PositionZ = 65.0
+25_ScaleX = 60
+25_ScaleY = -10
+25_ScaleZ = 60
+25_RotationX = 120
+25_RotationY = 110
+25_RotationZ = -90.0
+
+26_PositionX = 190
+26_PositionY = -18
+26_PositionZ = 90
+26_ScaleX = 60
+26_ScaleY = 0.0
+26_ScaleZ = 60
+26_RotationX = 120
+26_RotationY = 90.0
+26_RotationZ = -90.0
+
+27_PositionX = 80
+27_PositionY = -18
+27_PositionZ = 90
+27_ScaleX = 40
+27_ScaleY = 0.0
+27_ScaleZ = 40
+27_RotationX = 0.0
+27_RotationY = 90.0
+27_RotationZ = -90.0
+
+28_PositionX = 150
+28_PositionY = -18
+28_PositionZ = 100.0
+28_ScaleX = 50.0
+28_ScaleY = 0.0
+28_ScaleZ = 50.0
+28_RotationX = 110.0
+28_RotationY = 90.0
+28_RotationZ = -90.0
+
+29_PositionX = 250
+29_PositionY = -25
+29_PositionZ = 200
+29_ScaleX = 120
+29_ScaleY = 0.0
+29_ScaleZ = 120
+29_RotationX = 120
+29_RotationY = 90.0
+29_RotationZ = -90.0
+
+30_PositionX = 110.0
+30_PositionY = -15
+30_PositionZ = 120.0
+30_ScaleX = 50.0
+30_ScaleY = 0.0
+30_ScaleZ = 50.0
+30_RotationX = 120.0
+30_RotationY = 90.0
+30_RotationZ = -90.0
+
+31_PositionX = 140
+31_PositionY = -20
+31_PositionZ = 95
+31_ScaleX = 80.0
+31_ScaleY = 0.0
+31_ScaleZ = 80
+31_RotationX = 130.0
+31_RotationY = 90.0
+31_RotationZ = -90.0
+
+32_PositionX = 150.0
+32_PositionY = -18
+32_PositionZ = 180.0
+32_ScaleX = 100.0
+32_ScaleY = 0.0
+32_ScaleZ = 100.0
+32_RotationX = 120.0
+32_RotationY = 90.0
+32_RotationZ = -90.0
+
+33_PositionX = 180
+33_PositionY = -20
+33_PositionZ = 100
+33_ScaleX = 70
+33_ScaleY = 0.0
+33_ScaleZ = 70
+33_RotationX = 0.0
+33_RotationY = 90.0
+33_RotationZ = -90.0
+
+34_PositionX = 340
+34_PositionY = -15
+34_PositionZ = 190
+34_ScaleX = 70.0
+34_ScaleY = 0.0
+34_ScaleZ = 70.0
+34_RotationX = 120
+34_RotationY = 90.0
+34_RotationZ = -90.0
+
+35_PositionX = 60
+35_PositionY = -18
+35_PositionZ = 100
+35_ScaleX = 50.0
+35_ScaleY = 0.0
+35_ScaleZ = 50.0
+35_RotationX = 0.0
+35_RotationY = 90.0
+35_RotationZ = -90.0
+
+36_PositionX = 100
+36_PositionY = -13
+36_PositionZ = 70
+36_ScaleX = 60
+36_ScaleY = 0.0
+36_ScaleZ = 60
+36_RotationX = 150
+36_RotationY = 90.0
+36_RotationZ = -90.0
+
+37_PositionX = 160.0
+37_PositionY = -23
+37_PositionZ = 250.0
+37_ScaleX = 200.0
+37_ScaleY = 0.0
+37_ScaleZ = 200.0
+37_RotationX = 120.0
+37_RotationY = 90.0
+37_RotationZ = -90.0
+
+38_PositionX = 550.0
+38_PositionY = -25
+38_PositionZ = 330
+38_ScaleX = 250.0
+38_ScaleY = 0.0
+38_ScaleZ = 250.0
+38_RotationX = 120.0
+38_RotationY = 90.0
+38_RotationZ = -90.0
+
+39_PositionX = 55
+39_PositionY = -10.0
+39_PositionZ = 200
+39_ScaleX = 60
+39_ScaleY = 0.0
+39_ScaleZ = 60
+39_RotationX = 120
+39_RotationY = 90.0
+39_RotationZ = -90.0
+
+40_PositionX = 450
+40_PositionY = -20
+40_PositionY = -10
+40_PositionZ = 250
+40_ScaleX = 250.0
+40_ScaleY = 0.0
+40_ScaleZ = 250.0
+40_RotationX = 120
+40_RotationY = 90.0
+40_RotationZ = -90.0
+
+41_PositionX = -75
+41_PositionY = -20
+41_PositionZ = 38
+41_ScaleX = 80.0
+41_ScaleY = 0.0
+41_ScaleZ = 80.0
+41_RotationX = 150
+41_RotationY = 70
+41_RotationZ = -90.0
+
+42_PositionX = 450
+42_PositionY = -20
+42_PositionZ = 360
+42_ScaleX = 250.0
+42_ScaleY = 0.0
+42_ScaleZ = 250.0
+42_RotationX = 120
+42_RotationY = 90.0
+42_RotationZ = -90.0
+
+43_PositionX = 450
+43_PositionY = -30
+43_PositionZ = 240
+43_ScaleX = 100.0
+43_ScaleY = 0.0
+43_ScaleZ = 100.0
+43_RotationX = 0.0
+43_RotationY = 90.0
+43_RotationZ = -90.0

@@ -1,0 +1,111 @@
+; --------------------------------------------
+; Game ---------------------------------------
+g_PointsPerMeter = 0.5
+
+; --------------------------------------------
+; Player -------------------------------------
+
+pl_FlySpeed = 60.0
+pl_Acceleration = 250.0
+pl_Drag = 200.0
+pl_MaxSpeed = 30.0
+pl_MaxResource = 10.0
+pl_ResourcePerSecond = 1.0
+
+pl_FullControlSpeed = 50.0
+pl_FullControlCost = 4.0
+pl_FullControlEffectStrengthMin = 1.5
+pl_FullControlEffectStrengthMax = 7.0
+
+pl_BoostSpeed = 50.0
+pl_BoostCost = 3.0
+pl_BoostEffectStrength = 8.0
+
+pl_ShieldCost = 4.0
+pl_ShieldEffectStrength = 2.5
+
+pl_MaxRotation = 25.0
+pl_RotationCameraFactor = 0.03
+pl_RotationX = 347.0
+pl_GodMode = 0
+
+; --------------------------------------------
+; PostEffects --------------------------------
+pe_ChromaticAberrationStrength = 0.8
+
+; --------------------------------------------
+; Menu ---------------------------------------
+me_GameStartTime = 2.0
+me_GameStartLDEffectStrength = 15.0
+me_GameStartCAEffectStrength = 50.0
+me_GameStartRIBeginEffectStrength = 2000.0
+me_GameStartRIEndEffectStrength = 3.0
+
+me_TryAgainTime = 1.0
+me_TryAgainRIBeginEffectStrength = 2000.0
+me_TryAgainRIEndEffectStrength = 3.0
+
+; --------------------------------------------
+; Checkpoints --------------------------------
+cp_AddedMultiplicator = 0.25
+cp_HighestMultiplicator = 5.0
+cp_EffectCollectedLength = 1.2
+cp_EffectPassedLength = 0.6
+
+; --------------------------------------------
+; Points -------------------------------------
+po_Amount1 = 10
+po_Amount2 = 20
+po_Amount3 = 50
+po_Color1R = 255
+po_Color1G = 255
+po_Color1B = 255
+po_Color2R = 255
+po_Color2G = 132
+po_Color2B = 0
+po_Color3R = 255
+po_Color3G = 66
+po_Color3B = 66
+
+; --------------------------------------------
+; Difficulty Changer -------------------------
+
+dc_ScoreDifficulty2 = 1000.0
+dc_ScoreDifficulty3 = 3000.0
+dc_ScoreDifficulty4 = 5500.0
+dc_ScoreDifficulty5 = 9500.0
+
+; Ab Difficulty 5
+dc_SpeedRaiseTime = 60.0
+dc_AddedSpeed = 5.0
+dc_MaxSpeed = 20.0
+
+; --------------------------------------------
+; Camera -------------------------------------
+
+c_FOV = 90.0
+c_NearPlane = 0.1
+c_FarPlane = 10000.0
+c_RotationX = 4.0
+c_PositionY = 5.0
+
+; how far the Camera is behind the Player
+c_PositionMinusZ = 5.4
+
+; --------------------------------------------
+; Environment --------------------------------
+
+; probability is between 0 and 100
+en_FeatherProbability = 80
+en_SnakeRotateSpeed1 = -3.5
+en_SnakeRotateSpeed2 = -2.5
+en_SnakeRotateSpeed3 = -2.0
+en_SphereY = -250.0
+
+; --------------------------------------------
+; Pattern Manager ----------------------------
+pm_StartTextureBlendDistance = 100.0
+pm_EndTextureBlendDistance = 15.0
+pm_StartBuildDistance = 200;
+pm_EndBuildDistance = 130.0;
+pm_BuildStrength = 10.0;
