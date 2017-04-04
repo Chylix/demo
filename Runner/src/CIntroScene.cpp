@@ -63,8 +63,8 @@ void CIntroScene::ScaleObjects()
 	{
 		if (timer < 1.224f)
 		{
-			m_scaleObj1 += 0.26f * twTime->GetDeltaTime();
-			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_scaleObj1);
+			m_objScales[0] += 0.56f * twTime->GetDeltaTime();
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 		}
 
 	}
@@ -74,19 +74,32 @@ void CIntroScene::ScaleObjects()
 	{
 		if (timer < 3.6f)
 		{
-			m_scaleObj2 += 0.26f * twTime->GetDeltaTime();
-			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &m_scaleObj2);
+			m_objScales[1] += 0.26f * twTime->GetDeltaTime();
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 		}
 
 	}
+
+	//ob2
+	if (timer >= 4.778f)
+	{
+		if (timer < 5.1f)
+		{
+			m_objScales[2] += 0.26f * twTime->GetDeltaTime();
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
+		}
+
+	}
+
+
 
 	//ob2
 	if (timer >= 5.00f)
 	{
 		if (timer < 5.4f)
 		{
-			m_scaleObj3 += 0.26f * twTime->GetDeltaTime();
-			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_scaleObj3);
+			m_objScales[3] += 0.26f * twTime->GetDeltaTime();
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 		}
 
 	}
@@ -94,13 +107,12 @@ void CIntroScene::ScaleObjects()
 	if (timer >= 22.3f)
 	{
 		float superScale = (2.0f * m_uberScale -1.0f ) * (2.0f * m_uberScale - 1.0f);
-		m_scaleObj1 *= superScale;
-		m_scaleObj2 *= superScale;
-		m_scaleObj3 *= superScale;
+		m_objScales[0] *= superScale;
+		m_objScales[1] *= superScale;
+		m_objScales[2] *= superScale;
 
-		m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_scaleObj1);
-		m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &m_scaleObj2);
-		m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_scaleObj3);
+		m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
+
 		m_uberScale += 0.3 * twTime->GetDeltaTime();
 		triebWerk::CDebugLogfile::Instance().LogfText("Super mega ultra Scale : %f \n", superScale);
 	}

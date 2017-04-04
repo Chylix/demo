@@ -26,9 +26,7 @@ public:
 	triebWerk::CMaterial* m_pChromaticAberration;
 
 private:
-	float m_scaleObj1 = 0;
-	float m_scaleObj2 = 0;
-	float m_scaleObj3 = 0;
+	float m_objScales[4] = {0};
 	float m_fancyRot = 1;
 	float m_uberScale = 0;
 };
