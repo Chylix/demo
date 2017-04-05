@@ -19,8 +19,7 @@ void CIntroScene::Update()
 {
 	twTime->GetDeltaTime();
 
-	ChangeRot();
-	ScaleObjects();
+	Timeline();
 
 	float timer = twTime->GetTimeSinceStartup();
 
@@ -54,7 +53,9 @@ void CIntroScene::DoSomething2(triebWerk::CKeyframe::SKeyFrameEvent & a_rEvent)
 	//end = true;
 }
 
-void CIntroScene::ScaleObjects()
+
+
+void CIntroScene::Timeline()
 {
 	float timer = twTime->GetTimeSinceStartup();
 	
@@ -90,9 +91,6 @@ void CIntroScene::ScaleObjects()
 		}
 
 	}
-
-
-
 	//ob2
 	if (timer >= 5.00f)
 	{
@@ -104,7 +102,27 @@ void CIntroScene::ScaleObjects()
 
 	}
 
-	if (timer >= 22.3f)
+	if (timer >= 7.45f)
+	{
+		if (timer < 8.0f)
+		{
+			m_chromatic += 0.75 * twTime->GetDeltaTime();
+			m_pChromaticAberration->m_ConstantBuffer.SetValueInBuffer(5, &m_chromatic);
+		}
+
+	}
+
+	if (timer >= 9.0f)
+	{
+		if (timer < 10.20f)
+		{
+			m_fancyRot += 0.75 * twTime->GetDeltaTime();
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &m_fancyRot);
+		}
+
+	}
+
+	/*if (timer >= 22.3f)
 	{
 		float superScale = (2.0f * m_uberScale -1.0f ) * (2.0f * m_uberScale - 1.0f);
 		m_objScales[0] *= superScale;
@@ -115,25 +133,10 @@ void CIntroScene::ScaleObjects()
 
 		m_uberScale += 0.3 * twTime->GetDeltaTime();
 		triebWerk::CDebugLogfile::Instance().LogfText("Super mega ultra Scale : %f \n", superScale);
-	}
+	}*/
 
 	//m_scaleObj1 += 
 
-}
-
-void CIntroScene::ChangeRot()
-{
-	float timer = twTime->GetTimeSinceStartup();
-
-	if (timer >= 13.00f)
-	{
-		if (m_fancyRot > 0.0f)
-		{
-			m_fancyRot -= 0.35f * twTime->GetDeltaTime();
-			triebWerk::CDebugLogfile::Instance().LogfText("%f \n", m_fancyRot);
-			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(9, &m_fancyRot);
-		}
-	}
 }
 
 
@@ -146,18 +149,10 @@ void CIntroScene::CreatePlayground()
 	m_pMetaBalls = m_pPostEffect->AddMaterial(twResourceManager->GetMaterial("Dem0"));
 	m_pChromaticAberration = m_pPostEffect->AddMaterial(twResourceManager->GetMaterial("ChromaticAberration"));
 
-	float chromatic = 0.5;
-	m_pChromaticAberration->m_ConstantBuffer.SetValueInBuffer(5, &chromatic);
+	m_pChromaticAberration->m_ConstantBuffer.SetValueInBuffer(5, &m_chromatic);
+	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
+	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &m_fancyRot);
 
-	float scale1 = -0.1f;
-	float scale2 = -0.1f;
-	float scale3 = -0.1f;
-	float fancyRot = 1.0f;
-
-	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &scale1);
-	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &scale2);
-	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &scale3);
-	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(9, &fancyRot);
 	r->SetDrawable(m_pPostEffect);
 
 	twActiveWorld->AddEntity(r);

@@ -126,9 +126,9 @@ float2 CalcSpeherePos(int sphereId,float time,float speed)
   float t = time * speed;
   float phimod = phirad ;//+ time*0.02;
   float offset = phimod*sphereId;
+  float spaceOffset = (0.5 * (sphereId))*FancyRot;
 
-
-  return float2(cos(t+offset), sin(t+offset))*(5.0*(sphereId/50.));
+  return float2(cos(t+offset+spaceOffset), sin(t+offset))*(5.0*(sphereId/50.));
 }
 
 float3 MetaBalls(float iGlobalTime, float2 uv)

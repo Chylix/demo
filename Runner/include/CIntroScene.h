@@ -16,8 +16,7 @@ public:
 
 private:
 	void CreatePlayground();
-	void ScaleObjects();
-	void ChangeRot();
+	void Timeline();
 
 public:
 	triebWerk::CEntity* m_pEntity;
@@ -27,6 +26,7 @@ public:
 
 private:
 	float m_objScales[4] = {0};
-	float m_fancyRot = 1;
+	float m_fancyRot = 0;
 	float m_uberScale = 0;
+	float m_chromatic = 0.0;
 };
