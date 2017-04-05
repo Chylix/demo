@@ -9,6 +9,7 @@ cbuffer constBuffer
 	float2 iResolution;
   float4 scale;
 	float FancyRot;
+  float Wave;
 };
 
 struct VS_Data
@@ -27,7 +28,7 @@ struct PS_Data
 
 float gt(float x, float y)
 {
-    return 1.0 - max(sign(x-y),0.0);
+    return floor(max(sign(x-y),0.0));
 }
 
 float sinIO( float x)
@@ -159,7 +160,8 @@ float3 MetaBalls(float iGlobalTime, float2 uv)
   for(int i = 0; i < 50; i++)
   {
     float2 sp = CalcSpeherePos(i,iGlobalTime,0.5);
-    mat0 = smin(mat0, length(sp - uv) - scale[i%4],0.3);
+    float wavemod = (0.2*sin(Wave)*(i/50.));
+    mat0 = smin(mat0, length(sp - uv) - (scale[i%4]+wavemod),0.3);
 
   }
 

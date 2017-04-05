@@ -91,7 +91,7 @@ void CIntroScene::Timeline()
 	{
 		if (timer < 3.6f)
 		{
-			m_objScales[1] += 0.26f * twTime->GetDeltaTime();
+			m_objScales[1] += 0.36f * twTime->GetDeltaTime();
 			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 		}
 
@@ -102,7 +102,7 @@ void CIntroScene::Timeline()
 	{
 		if (timer < 5.1f)
 		{
-			m_objScales[2] += 0.26f * twTime->GetDeltaTime();
+			m_objScales[2] += 0.53f * twTime->GetDeltaTime();
 			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 		}
 
@@ -138,6 +138,63 @@ void CIntroScene::Timeline()
 
 	}
 
+	if (timer >= 25.50f)
+	{
+		if (timer < 26.5f)
+		{
+			m_wave = Slider(25.50f, 26.50f, timer, 0.0, 3.14159265f);
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
+		}
+
+	}
+
+	if (timer >= 27.50f)
+	{
+		if (timer < 28.5f)
+		{
+			m_wave = Slider(27.50f, 28.50f, timer, 0.0, 3.14159265f);
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
+		}
+
+	}
+
+	if (timer >= 29.50f)
+	{
+		if (timer < 30.5f)
+		{
+			m_wave = Slider(29.50f, 30.50f, timer, 0.0, 3.14159265f);
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
+		}
+
+	}
+
+
+	if (timer >= 32.00f)
+	{
+		if (timer < 32.2f)
+		{
+
+			m_objScales[0] = Slider(32.00f, 32.20f, timer, m_objScales[0], 0.20f);
+			m_objScales[1] = Slider(32.00f, 32.20f, timer, m_objScales[1], 0.20f);
+			m_objScales[2] = Slider(32.00f, 32.20f, timer, m_objScales[2], 0.20f);
+			m_objScales[3] = Slider(32.00f, 32.20f, timer, m_objScales[3], 0.20f);
+
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
+		}
+
+	}
+
+	if (timer >= 32.20f)
+	{ 
+		if (timer < 32.72f)
+		{
+
+			m_wave = Slider(32.20f, 32.72f, timer, -0.5, 1.5);
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
+		}
+
+	}
+
 	/*if (timer >= 22.3f)
 	{
 		float superScale = (2.0f * m_uberScale -1.0f ) * (2.0f * m_uberScale - 1.0f);
@@ -168,6 +225,7 @@ void CIntroScene::CreatePlayground()
 	m_pChromaticAberration->m_ConstantBuffer.SetValueInBuffer(5, &m_chromatic);
 	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &m_fancyRot);
+	m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
 
 	r->SetDrawable(m_pPostEffect);
 
