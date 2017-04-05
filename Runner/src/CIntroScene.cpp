@@ -1,5 +1,6 @@
 #include <CIntroScene.h>
 
+
 CIntroScene::CIntroScene()
 {
 }
@@ -53,7 +54,22 @@ void CIntroScene::DoSomething2(triebWerk::CKeyframe::SKeyFrameEvent & a_rEvent)
 	//end = true;
 }
 
+float lerp(float a_Start, float a_End, float a_Current)
+{
+	return (a_Start + a_Current*(a_End - a_Start));
+}
 
+float CIntroScene::Slider(float a_StartTime, float a_EndTime, float a_CurrentTime, float a_StartValue, float a_EndValue)
+{
+	
+
+	float pt =  a_CurrentTime - a_StartTime;
+	pt = pt < 0 ? 0. : pt;
+	float c = a_EndTime - a_StartTime;
+	float w = pt / c;
+
+	return lerp(a_StartValue, a_EndValue, w);
+}
 
 void CIntroScene::Timeline()
 {
@@ -114,9 +130,9 @@ void CIntroScene::Timeline()
 
 	if (timer >= 9.0f)
 	{
-		if (timer < 10.20f)
+		if (timer < 32.20f)
 		{
-			m_fancyRot += 0.75 * twTime->GetDeltaTime();
+			m_fancyRot = Slider(9.0,15.20,timer,0.0,0.1337);
 			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(7, &m_fancyRot);
 		}
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <CEngine.h>
-
+#include <algorithm>
 class CIntroScene : public triebWerk::IScene
 {
 public:
@@ -17,6 +17,7 @@ public:
 private:
 	void CreatePlayground();
 	void Timeline();
+	float Slider(float a_StartTime, float a_EndTime, float a_CurrentTime, float a_StartValue, float a_EndValue);
 
 public:
 	triebWerk::CEntity* m_pEntity;
