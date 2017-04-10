@@ -16,8 +16,8 @@ private:
 
 public:
 	triebWerk::CEntity* m_pEntity;
-	triebWerk::CEntity* m_pEntity2;
 	triebWerk::CPostEffectDrawable* m_pPostEffect;
+
 	triebWerk::CMaterial* m_pChromaticAberration;
-	triebWerk::CMaterial* m_pRipple;
+	triebWerk::CMaterial* m_pScene;
 };

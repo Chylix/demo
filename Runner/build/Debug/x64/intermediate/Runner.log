@@ -1,0 +1,31 @@
+﻿  
+  -------------------------------------------------------------------------------
+     ROBOCOPY     ::     Robustes Dateikopieren für Windows                              
+  -------------------------------------------------------------------------------
+  
+    Gestartet: Donnerstag, 6. April 2017 22:14:56
+     Quelle : E:\Programming\Demos\demo\triebWerk\extern\lib\x64\
+       Ziel : E:\Programming\Demos\demo\Runner\gamedata\
+  
+      Dateien : *.dll
+  	    
+    Optionen: /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+  
+  ------------------------------------------------------------------------------
+  
+  	                   3	E:\Programming\Demos\demo\triebWerk\extern\lib\x64\
+  
+  ------------------------------------------------------------------------------
+  
+             Insgesamt   KopiertÜbersprungenKeine Übereinstimmung    FEHLER    Extras
+  Verzeich.:         1         0         1         0         0         0
+    Dateien:         3         0         3         0         0         0
+      Bytes:   907.0 k         0   907.0 k         0         0         0
+     Zeiten:   0:00:00   0:00:00                       0:00:00   0:00:00
+     Beendet: Donnerstag, 6. April 2017 22:14:56
+  
+  main.cpp
+e:\programming\demos\demo\runner\src\main.cpp(147): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+e:\programming\demos\demo\runner\src\main.cpp(148): warning C4800: "int": Variable wird auf booleschen Wert ("True" oder "False") gesetzt (Auswirkungen auf Leistungsverhalten möglich)
+  Runner.vcxproj -> E:\Programming\Demos\demo\Runner\build\Debug\x64\Runner.exe
+  Runner.vcxproj -> E:\Programming\Demos\demo\Runner\build\Debug\x64\Runner.pdb (Partial PDB)

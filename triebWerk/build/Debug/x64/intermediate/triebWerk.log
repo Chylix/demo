@@ -1,0 +1,99 @@
+﻿  IShader.cpp
+  IScene.cpp
+  IMapLayer.cpp
+  IDrawable.cpp
+  ICollider.cpp
+  IBehaviour.cpp
+  CXboxController.cpp
+  CWorld.cpp
+  CWindow.cpp
+  CVertexShader.cpp
+  CUIDrawable.cpp
+  CUIWorld.cpp
+  CUITransform.cpp
+  CUIEntity.cpp
+  CTransform.cpp
+  CTMXParser.cpp
+  CTime.cpp
+  CTilesetMap.cpp
+  CTileset.cpp
+  CTexture2D.cpp
+  Code wird generiert...
+  Kompilieren...
+  CSphereCollider.cpp
+  CResourceManager.cpp
+  CRenderer.cpp
+  CRandom.cpp
+  CPixelShader.cpp
+  CPhysicWorld.cpp
+  CPhysicEntity.cpp
+  COBJParser.cpp
+  CObjectLayer.cpp
+  COBBCollider.cpp
+  CMouse.cpp
+  CMeshDrawable.cpp
+  CMesh.cpp
+  CMaterial.cpp
+  CMapLayer.cpp
+  CMapImageLayer.cpp
+  CKeyboard.cpp
+  CInput.cpp
+  CTWFParser.cpp
+  CID.cpp
+  Code wird generiert...
+  Kompilieren...
+  CHLSLParser.cpp
+  CGraphics.cpp
+  CGamepad.cpp
+  CFileWatcher.cpp
+  CFileReader.cpp
+  CEntity.cpp
+  CEngine.cpp
+  CDebugCamera.cpp
+  CDebug.cpp
+  CConstantBuffer.cpp
+  CTWFData.cpp
+  CTimeline.cpp
+e:\programming\demos\demo\triebwerk\src\ctimeline.cpp(18): warning C4100: "a_TimeSinceStartUp": Unreferenzierter formaler Parameter
+e:\programming\demos\demo\triebwerk\src\ctimeline.cpp(86): warning C4189: "order": Lokale Variable ist initialisiert aber nicht referenziert
+  CText.cpp
+  CTag.cpp
+  CStartUpWindow.cpp
+  CSoundStream.cpp
+e:\programming\demos\demo\triebwerk\src\csoundstream.cpp(25): warning C4100: "dwParam2": Unreferenzierter formaler Parameter
+e:\programming\demos\demo\triebwerk\src\csoundstream.cpp(80): warning C4244: "Argument": Konvertierung von "float" in "DWORD", möglicher Datenverlust
+  CSoundSource.cpp
+  CSoundEngine.cpp
+e:\programming\demos\demo\triebwerk\src\csoundengine.cpp(14): warning C4100: "a_pResourceManager": Unreferenzierter formaler Parameter
+e:\programming\demos\demo\triebwerk\src\csoundengine.cpp(102): warning C4238: Nicht dem Standard entsprechende Erweiterung: R-Wert einer Klasse als L-Wert verwendet
+  CSceneTimer.cpp
+  CSceneManager.cpp
+  Code wird generiert...
+  Kompilieren...
+  CSceneHolder.cpp
+  CRenderTarget.cpp
+  CRenderQuad.cpp
+  CRenderBatch.cpp
+  CKeyframe.cpp
+  CInstancedMeshBatch.cpp
+  CInstancedFontBatch.cpp
+  CGeometryShader.cpp
+  CFontDrawable.cpp
+  CFontManager.cpp
+  CFontFace.cpp
+  CFont.cpp
+  CFileWriter.cpp
+  CDebugLogfile.cpp
+  CDDSParser.cpp
+  CCollisionEvent.cpp
+  CCollision.cpp
+  CCamera.cpp
+  CBody.cpp
+  CAABBCollider.cpp
+  Code wird generiert...
+  Kompilieren...
+  CPostEffectDrawable.cpp
+e:\programming\demos\demo\triebwerk\include\cposteffectdrawable.cpp(81): warning C4100: "a_rTransform": Unreferenzierter formaler Parameter
+  lodepng.cpp
+  Code wird generiert...
+  triebWerk.vcxproj -> E:\Programming\Demos\demo\triebWerk\build\Debug\x64\triebWerk.lib

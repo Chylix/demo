@@ -169,28 +169,27 @@ void CIntroScene::Timeline()
 	}
 
 
-	if (timer >= 32.00f)
+	if (timer >= 31.50f)
 	{
-		if (timer < 32.2f)
+		if (timer < 32.5f)
 		{
-
-			m_objScales[0] = Slider(32.00f, 32.20f, timer, m_objScales[0], 0.20f);
-			m_objScales[1] = Slider(32.00f, 32.20f, timer, m_objScales[1], 0.20f);
-			m_objScales[2] = Slider(32.00f, 32.20f, timer, m_objScales[2], 0.20f);
-			m_objScales[3] = Slider(32.00f, 32.20f, timer, m_objScales[3], 0.20f);
-
-			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
+			m_wave = Slider(31.50f, 32.50f, timer, 0.0, 3.14159265f);
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
 		}
 
 	}
 
-	if (timer >= 32.20f)
+	if (timer >= 32.50f)
 	{ 
-		if (timer < 32.72f)
+		if (timer < 33.2f)
 		{
 
-			m_wave = Slider(32.20f, 32.72f, timer, -0.5, 1.5);
-			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(8, &m_wave);
+			m_objScales[0] = Slider(32.50f, 33.2f, timer, -0.5, 100.20f);
+			m_objScales[1] = Slider(32.50f, 33.2f, timer, -0.5, 100.20f);
+			m_objScales[2] = Slider(32.50f, 33.2f, timer, -0.5, 100.20f);
+			m_objScales[3] = Slider(32.50f, 33.2f, timer, -0.5, 100.20f);
+
+			m_pMetaBalls->m_ConstantBuffer.SetValueInBuffer(6, &m_objScales);
 		}
 
 	}
@@ -219,7 +218,7 @@ void CIntroScene::CreatePlayground()
 
 	m_pPostEffect = twRenderer->CreatePostEffecthDrawable();
 
-	m_pMetaBalls = m_pPostEffect->AddMaterial(twResourceManager->GetMaterial("Dem0"));
+	m_pMetaBalls = m_pPostEffect->AddMaterial(twResourceManager->GetMaterial("Scene0"));
 	m_pChromaticAberration = m_pPostEffect->AddMaterial(twResourceManager->GetMaterial("ChromaticAberration"));
 
 	m_pChromaticAberration->m_ConstantBuffer.SetValueInBuffer(5, &m_chromatic);

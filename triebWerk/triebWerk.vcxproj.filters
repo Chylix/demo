@@ -593,9 +593,6 @@
     <ClInclude Include="include\CPhysicEntity.h">
       <Filter>Headerdateien\Physic</Filter>
     </ClInclude>
-    <ClInclude Include="include\CPhysicWorld.h">
-      <Filter>Headerdateien\Physic</Filter>
-    </ClInclude>
     <ClInclude Include="include\ECollider.h">
       <Filter>Headerdateien\Physic\Collider</Filter>
     </ClInclude>
@@ -799,6 +796,9 @@
     </ClInclude>
     <ClInclude Include="include\CStartUpWindow.h">
       <Filter>Headerdateien\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CPhysicWorld.h">
+      <Filter>Headerdateien\Rendering</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

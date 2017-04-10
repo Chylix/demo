@@ -36,7 +36,7 @@ int main()
 	config.m_Height = 720;
 	config.m_Fullscreen = false;
 	config.m_VSync = false;
-	config.m_MasterVolume = 1.0f;
+	config.m_MasterVolume = .0f;
 	config.m_BGMVolume = 1.0f;
 	config.m_SFXVolume = 1.0f;
 
