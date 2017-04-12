@@ -1,27 +1,27 @@
 //Vertex Shader -------------------------------------------
 cbuffer constBuffer
 {
-	float4x4 world;
-	float4x4 projection;
-	float4x4 view;
-	float IsInstanced;
-	float Timer;
-	float2 iResolution;
-  float4 scale;
-	float FancyRot;
-  float Wave;
+  float4x4 world;
+  float4x4 projection;
+  float4x4 view;
+  float IsInstanced;
+  float Timer;
+  float2 iResolution; 
+  int nGons;
+  float radFactor;
+  float posSpeed;
 };
 
 struct VS_Data
 {
-	float3 position : POSITION;
-	float2 uv : UV;
+  float3 position : POSITION;
+  float2 uv : UV;
 };
 
 struct PS_Data
 {
-	float4 position : SV_POSITION;
-	float2 uv : UV;
+  float4 position : SV_POSITION;
+  float2 uv : UV;
 };
 
 #define phirad 2.39996322972865332
@@ -57,10 +57,11 @@ float smin(float a, float b, float k) {
   return lerp(b, a, h) - k * h * (1.0 - h);
 }
 
-float nGonSDF(float2 uv, float2 pos, in int gons, in float radius)
+float nGonSDF(float2 uv, float2 pos, in int gons, in float radius, float rotation)
 {
+    uv -= pos;
     float stepSize = 6.28 / float(gons);
-    float currentAngle = atan2(uv.y, uv.x);
+    float currentAngle = atan2(uv.y, uv.x) + rotation;
     
     float dist = (cos(floor(0.5 + currentAngle / stepSize)* stepSize - currentAngle)* length(uv)) - radius;
     
@@ -112,106 +113,31 @@ float3 Edge(float iGlobalTime, float2 uv)
     return fColor;
 }
 
-float SphereRadiusPos[24] =
-{
-0.5,0.5,0.5,
-0.75,0.75,0.75,
-1.0,1.0,1.0,1.0,
-1.25,1.25,1.25,1.25,
-1.5,1.5,1.5,1.5,1.5,
-1.75,1.75,1.75,1.75,1.75
-};
-
-
-float curves[6] =
-{
-0.,
-0.,
-0.,
-0.,
-0.,
-0.
-} ;
-
-float2 CalcSpeherePos(int sphereId,float time,float speed)
-{
-  float t = time * speed;
-  float phimod = phirad ;//+ time*0.02;
-  float offset = phimod*sphereId;
-  float spaceOffset = (0.5 * (sphereId))*FancyRot;
-
-  return float2(cos(t+offset+spaceOffset), sin(t+offset))*(5.0*(sphereId/50.));
-}
-
-float3 MetaBalls(float iGlobalTime, float2 uv)
-{
-
-  float3 fColor = float3(0.0,0.0,0.0);
-  float aaFactor = 0.01; // Antialising Factor for smoothstep
-
-    //Sphere Positions
-   	//float curve4 = (-6.28-6.28*sinBetween(iGlobalTime,0.0,0.5)) * FancyRot;
-
-    //float2 oPos01 = float2(cos(iGlobalTime+1/3.*6.28)*rad,sin(iGlobalTime+1/3.*curve1)*rad);
-    //float2 oPos10 = float2(cos(iGlobalTime+2/3.*curve1)*rad,sin(iGlobalTime+2/3.*curve3)*rad);
-   // float2 oPos11 = float2(cos(iGlobalTime+3/3.*curve2)*rad,sin(iGlobalTime+3/3.*curve2)*rad);
- 
-
-
- // float2 sPos00 = float2(cos(iGlobalTime*.5+(phirad)), sin(iGlobalTime*.5+phirad))*rad00;
- // float2 sPos01  = float2(cos(iGlobalTime*.5+(phirad*2.)), sin(iGlobalTime*.5+(phirad*2.)))*rad01;
- // float2 sPos10  = float2(cos(iGlobalTime*.5+(phirad*3.)), sin(iGlobalTime*.5+(phirad*3.)))*rad10;
- // float2 sPos11  = float2(cos(iGlobalTime*.5+(phirad*4.)), sin(iGlobalTime*.5+(phirad*4.)))*rad11;
- // float2 sPos100  = float2(cos(iGlobalTime*.5+(phirad*5.)), sin(iGlobalTime*.5+(phirad*5.)))*rad100;
- // float2 sPos101  = float2(cos(iGlobalTime*.5+(phirad*6.)), sin(iGlobalTime*.5+(phirad*6.)))*rad101;
-
-
-  float mat0 = 1.0;
-
-  for(int i = 0; i < 50; i++)
-  {
-    float2 sp = CalcSpeherePos(i,iGlobalTime,0.5);
-    float wavemod = (0.2*sin(Wave)*(i/50.));
-    mat0 = smin(mat0, length(sp - uv) - (scale[i%4]+wavemod),0.3);
-
-  }
-
-    //Scene Buildup
-    //float mat0 = length(oPos00 - uv) - 0.2;       // Distance field of a sphere
-  //mat0 = smin(mat0,length(sPos00 - uv) - sinBetween(iGlobalTime,0.8,1.2)*0.2*ScaleOb1,0.3); // smin for merching the objects in the Scene 
-  //mat0 = smin(mat0,length(sPos01 - uv) - sinBetween(iGlobalTime+111.,0.5,0.9)*0.3*ScaleOb2,0.3);  // 0.3 factor for archiving 
-  //mat0 = smin(mat0,length(sPos10 - uv) - sinBetween(iGlobalTime+1337.,0.9,1.4)*0.1*ScaleOb3,0.3); // noticable lerping between objects
-  //mat0 = smin(mat0,length(sPos11 - uv) - sinBetween(iGlobalTime+1337.,0.9,1.4)*0.1*ScaleOb3,0.3); // noticable lerping between objects
-  //mat0 = smin(mat0,length(sPos100 - uv) - sinBetween(iGlobalTime+1337.,0.9,1.4)*0.1*ScaleOb3,0.3); // noticable lerping between objects
-  //mat0 = smin(mat0,length(sPos101 - uv) - sinBetween(iGlobalTime+1337.,0.9,1.4)*0.1*ScaleOb3,0.3); // noticable lerping between objects
-
-    // object/scene Mask for coloring
-  float object0 = 1.0 - smoothstep(0.0,aaFactor, mat0);
-  float scene = 1.0 - object0;
-    
-    //Coloring
-  float3 sceneColor = float3(1.0,1.0,1.0);
-  float3 objectColor0 = float3(0.0,0.0,0.0);
-
-    //Uncomment it for eye cancer color
-    //sceneColor = vec3(1.0,0.0,0.65);
-    //objectColor0 = vec3(0.0,1.0,1.0);
-    
-    //Mix objectcolor with scenebackgroundcolor
-  fColor = float3(lerp(objectColor0,sceneColor,scene));
-
-  return fColor;
-}
 
 float3 Illusion(float iGlobalTime, float2 uv)
 {
-    float3 fColor = float3(0.0,0.0,0.0);
-    float2 pos = float2(.0,.0);
-    
-      float dist = nGonSDF(uv,pos,4,0.5);
-      float o = 1. - smoothstep(0.0,5.0/iResolution.x, dist);
+    float3 fColor = float3(1.0,1.0,1.0);
+   
+    for(float i = 30.; i > 0.; i--)
+    {
 
-      fColor = float3(o,o,o);
+      float radius = (radFactor + i*0.1f) - (iGlobalTime * 0.3);
+      //float radius = (i+-400.0)*radFactor + iGlobalTime * 0.3;
+      float2 pos = float2(cos(iGlobalTime+i*0.08) * posSpeed,0.0);
+      float rot = sin(-iGlobalTime*0.1+(i/20.0))*6.28;
+
+      float dist = nGonSDF(uv,pos,nGons,radius, rot*0.0);
+
+      float o = 1. - smoothstep(0.0,5.0/iResolution.x, dist);
+      float3 oColor = float3(1.0,1.0,1.0) * (1.0 -fmod(i,2.0));
+      fColor = lerp(fColor,oColor,o);
+
+    }
+
+      
+
+
+
     //for(float i = 20.0; i > 0.; --i)
    // {
    //     pos = float2(sin(iGlobalTime+(20.0 - i)*0.4)*0.02, sin(iGlobalTime+(20.0 - i)*0.4)*0.02);
@@ -228,15 +154,15 @@ float3 Illusion(float iGlobalTime, float2 uv)
 
 PS_Data VS_Main(VS_Data input)
 {
-	PS_Data output;
-	
-	output.position = mul(float4(input.position, 1), world);
-	output.position = mul(output.position, view);
-	output.position = mul(output.position, projection);
+  PS_Data output;
+  
+  output.position = mul(float4(input.position, 1), world);
+  output.position = mul(output.position, view);
+  output.position = mul(output.position, projection);
 
-	output.uv = input.uv;
+  output.uv = input.uv;
 
-	return output;
+  return output;
 }
 
 //PIXEL SHADER ---------------------------------------------
@@ -255,7 +181,7 @@ float4 PS_Main(PS_Data input) : SV_TARGET
   uv = 2.0 * uv - 1.0;
   uv.x *= iResolution.x / iResolution.y;
 
-	uv *= 1.5;
+  uv *= 1.5;
   float3 a = Illusion(iGlobalTime, uv);
 
    //float3 s = Singular(iGlobalTime, uv);

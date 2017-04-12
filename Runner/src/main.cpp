@@ -36,7 +36,7 @@ int main()
 	config.m_Height = 720;
 	config.m_Fullscreen = false;
 	config.m_VSync = false;
-	config.m_MasterVolume = .0f;
+	config.m_MasterVolume = .5f;
 	config.m_BGMVolume = 1.0f;
 	config.m_SFXVolume = 1.0f;
 
@@ -58,7 +58,7 @@ int main()
     while (run == true)
 	{
 		bool isPaused = twInput->m_Keyboard.IsState(triebWerk::EKey::P, triebWerk::EButtonState::Pressed);
-		std::cout << std::to_string(isPaused) << std::endl;
+		//std::cout << std::to_string(isPaused) << std::endl;
 		twEngine.Pause(isPaused);
 
 		run = twEngine.Run();
@@ -96,7 +96,11 @@ void SetupSceneOrder()
 
 	triebWerk::CTimeline::SSceneOrder* so2 = new triebWerk::CTimeline::SSceneOrder();
 	so2->m_SceneName = "Second";
-	so2->m_SceneTimer.SetTimer(100000.0f);
+	so2->m_SceneTimer.SetTimer(18.0f);
+
+	triebWerk::CTimeline::SSceneOrder* so3 = new triebWerk::CTimeline::SSceneOrder();
+	so1->m_SceneName = "Intro";
+	so1->m_SceneTimer.SetTimer(32.7f);
 
 	//std::function<void(triebWerk::CKeyframe::SKeyFrameEvent&)> f = std::bind(&CIntroScene::DoSomething, intro, std::placeholders::_1);
 	//std::function<void(triebWerk::CKeyframe::SKeyFrameEvent&)> xc = std::bind(&CIntroScene::DoSomething2, intro, std::placeholders::_1);
@@ -105,6 +109,7 @@ void SetupSceneOrder()
 	//twTimeline->AddKeyframe(new triebWerk::CKeyframe(xc, 5.0f));
 	twTimeline->AddSceneOrder(so1);
 	twTimeline->AddSceneOrder(so2);
+	twTimeline->AddSceneOrder(so3);
 	//twTimeline->AddSceneOrder(so3);
 	//twTimeline->AddSceneOrder(so4);
 }
@@ -135,7 +140,7 @@ void LoadConfig(triebWerk::SEngineConfiguration& a_rConfig)
         a_rConfig.m_Width = 1600;
         a_rConfig.m_Height = 900;
         a_rConfig.m_Fullscreen = false;
-        a_rConfig.m_VSync = false;
+        a_rConfig.m_VSync = true;
         a_rConfig.m_MasterVolume = 1.0f;
         a_rConfig.m_BGMVolume = 0.6f;
         a_rConfig.m_SFXVolume = 1.0f;
