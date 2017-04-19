@@ -92,11 +92,11 @@ void SetupSceneOrder()
 
 	triebWerk::CTimeline::SSceneOrder* so1 = new triebWerk::CTimeline::SSceneOrder();
 	so1->m_SceneName = "Intro";
-	so1->m_SceneTimer.SetTimer(32.7f);
+	so1->m_SceneTimer.SetTimer(0.7f);
 
 	triebWerk::CTimeline::SSceneOrder* so2 = new triebWerk::CTimeline::SSceneOrder();
 	so2->m_SceneName = "Second";
-	so2->m_SceneTimer.SetTimer(18.0f);
+	so2->m_SceneTimer.SetTimer(32.0f);
 
 	triebWerk::CTimeline::SSceneOrder* so3 = new triebWerk::CTimeline::SSceneOrder();
 	so1->m_SceneName = "Intro";
